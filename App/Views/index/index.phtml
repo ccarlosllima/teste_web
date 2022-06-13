@@ -1,0 +1,29 @@
+
+
+
+<form class="form-login" action="/autenticar" method="post">
+
+	<?php if (isset($_GET['acesso']) && $_GET['acesso'] = 'negado') { ?>
+
+	<div class="alert alert-danger" role="alert">
+		Você não tem permissão para acessar esse recurso, 
+		por favor entre com sua conta!
+	</div>
+
+	<?php } ?>
+
+	<input id="email" class="input-texto  form-control" type="email" name="email"  placeholder="Nome">	
+	<input id="senha" class="input-senha form-control" type="password" name="senha" placeholder="Senha">	
+	
+	<?php if (isset($_GET['login']) && $_GET['login'] = 'error') { ?>
+		<div class="row">
+			<div class="col">
+				<span class="text text-danger"> E-mail e ou senha inválido(s)</span>
+			</div>
+		</div>		
+	<?php } ?>
+	<button  id="button" class="input-submit "  type="submit" >Entrar</button>
+
+	<a class="link-inscreverse btn btn-success" href="/inscreverse" class="">Inscrever-se</a>
+
+</form>
